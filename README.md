@@ -1,4 +1,3 @@
-# Employee-Management-System
 ## Introduction
 This is a mini-project where an Employee Management System is made using java. As this is a mini-project to be based on java and DSA, we have implemented ArrayList class instead of MySQL database. This program lets the user do a bunch of tasks with the employee data like Adding, Inspecting, Deleting, Sorting and Modifying.
 
