@@ -19,6 +19,7 @@ When user selects the first option, the program then leads the user to add the d
  - Employee DESIGNATION
  - Employee SALARY
  - Employee CONTACT NUMBER
+
 After the user adds the following information, the program then saves the data in the respective ArrayLists and stores them.
 
 ## Viewing Employee Data
