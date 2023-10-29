@@ -3,16 +3,13 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
         //Scanner object
         Scanner scan = new Scanner(System.in);
 
 
         //File objects
-        File managerData = new File("../data/manager.txt");
-        File hrData = new File("../data/hr.txt");
-        File designerData = new File("../data/designer.txt");
-        File seniorDeveloperData = new File("../data/senior_developer.txt");
-        File assistantDeveloperData = new File("../data/assistant-developer.txt");
+        File employeeData = new File("../data/employee.txt");
 
 
         //GUI Code
@@ -32,12 +29,33 @@ public class Main {
             choice = scan.nextInt();
 
             switch (choice) {
-                case value:
+                case 1:
+                System.out.println("\nShowing all Employee Data---");
+                    Employee.printAllData();
+                    break;
+            
+                case 2:
+
+                    break;
+
+                case 3:
                     
                     break;
             
-                default:
+                case 4:
+                    
                     break;
+            
+                case 5:
+                    
+                    break;
+            
+                case 6:
+                    
+                    return;
+            
+                default:
+                    System.out.println("Invalid option. Try again.\n");
             }
         }
     }
