@@ -4,8 +4,7 @@
  */
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
+import java.util.Scanner;
 
 public class Employee {
 
@@ -32,133 +31,67 @@ public class Employee {
     //Methods
     public static void printAllData() {
         try {
-            File outputFile = new File("../data/employee.txt");
-            FileInputStream fis = new FileInputStream(outputFile);
-            int c;
-            String input = "";
+            File readerFile = new File("../data/employee.txt");
+            Scanner reader = new Scanner(readerFile);
             int count = 1;
 
-            while (true) {
+            while (reader.hasNextLine()) {
+
+                String lineOfData = reader.nextLine();
+                String[] dataArray = lineOfData.split(",");
 
                 System.out.println("\nEmployee " + count + "\n-----------");
-                System.out.print("Employee ID: ");
+                System.out.println("Employee ID: " + dataArray[0]);
+                System.out.println("Employee NAME: " + dataArray[1]);
+                System.out.println("Employee DESIGNATION: " + dataArray[2]);
+                System.out.println("Employee GENDER: " + dataArray[3]);
+                System.out.println("Employee SALARY: " + dataArray[4]);
+                System.out.println("Employee ADDRESS: " + dataArray[5]);
+                System.out.println("Employee CONTACT NUMBER: " + dataArray[6]);
 
-                while (true) {
-                    c = fis.read();
-
-                    if (c == -1 || (char) c == ',') {
-                        break;
-                    } else {
-                        input += (char) c;
-                    }
-                }
-
-                System.out.println(input);
-                input = "";
-
-                System.out.print("Employee NAME: ");
-
-                while (true) {
-                    c = fis.read();
-
-                    if (c == -1 || (char) c == ',') {
-                        break;
-                    } else {
-                        input += (char) c;
-                    }
-                }
-
-                System.out.println(input);
-                input = "";
-            
-                System.out.print("Employee DESIGNATION: ");
-
-                while (true) {
-                    c = fis.read();
-
-                    if (c == -1 || (char) c == ',') {
-                        break;
-                    } else {
-                        input += (char) c;
-                    }
-                }
-
-                System.out.println(input);
-                input = "";
-            
-                System.out.print("Employee GENDER: ");
-
-                while (true) {
-                    c = fis.read();
-
-                    if (c == -1 || (char) c == ',') {
-                        break;
-                    } else {
-                        input += (char) c;
-                    }
-                }
-
-                System.out.println(input);
-                input = "";
-
-                System.out.print("Employee SALARY: ");
-
-                while (true) {
-                    c = fis.read();
-
-                    if (c == -1 || (char) c == ',') {
-                        break;
-                    } else {
-                        input += (char) c;
-                    }
-                }
-
-                System.out.println(input);
-                input = "";
-            
-                System.out.print("Employee ADDRESS: ");
-
-                while (true) {
-                    c = fis.read();
-
-                    if (c == -1 || (char) c == ',') {
-                        break;
-                    } else {
-                        input += (char) c;
-                    }
-                }
-
-                System.out.println(input);
-                input = "";
-            
-                System.out.print("Employee CONTACT NUMBER: ");
-
-                while (true) {
-                    c = fis.read();
-
-                    if (c == -1 || (char) c == ',') {
-                        break;
-                    } else {
-                        input += (char) c;
-                    }
-                }
-
-                System.out.println(input);
-                input = "";
-
-                if (c == -1) {
-                    break;
-                }
-            
                 count++;
             }
+
             System.out.println("-----------------------------\n");
-            fis.close();
+            reader.close();
 
         } catch (Exception e) {
             System.out.println(e);
         }
-
-        
     }
+
+    public static void searchData(int employeeID) {
+        try {
+            File readerFile = new File("../data/employee.txt");
+            Scanner reader = new Scanner(readerFile);
+
+            while (reader.hasNextLine()) {
+
+                String lineOfData = reader.nextLine();
+                String[] dataArray = lineOfData.split(",");
+
+                if (dataArray[0] == Integer.toString(employeeID)) {
+                    System.out.println("Employee found -----");
+                    System.out.println("Employee ID: " + dataArray[0]);
+                    System.out.println("Employee NAME: " + dataArray[1]);
+                    System.out.println("Employee DESIGNATION: " + dataArray[2]);
+                    System.out.println("Employee GENDER: " + dataArray[3]);
+                    System.out.println("Employee SALARY: " + dataArray[4]);
+                    System.out.println("Employee ADDRESS: " + dataArray[5]);
+                    System.out.println("Employee CONTACT NUMBER: " + dataArray[6]);
+                    System.out.println();
+                }
+                return;
+            }
+
+            System.out.println("Employee not found\n");
+
+            reader.close();
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    
 }

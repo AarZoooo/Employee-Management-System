@@ -8,10 +8,6 @@ public class Main {
         Scanner scan = new Scanner(System.in);
 
 
-        //File objects
-        File employeeData = new File("../data/employee.txt");
-
-
         //GUI Code
         System.out.println("----------  EMPLOYEE MANAGEMENT SYSTEM  ----------");
         
@@ -35,7 +31,13 @@ public class Main {
                     break;
             
                 case 2:
+                    System.out.println("Searching Employee Data---");
 
+                    System.out.print("Enter Employee ID: ");
+                    int employeeID = scan.nextInt();
+
+                    Employee.searchData(employeeID);
+                    
                     break;
 
                 case 3:
