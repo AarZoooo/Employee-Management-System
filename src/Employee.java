@@ -12,16 +12,18 @@ public class Employee {
     char gender;
     double salary;
     String address;
+    long contact;
 
     //Constructors
-    public Employee(int id, String name, Designation designation, char gender, double salary, String address) {
+    public Employee(int id, String name, Designation designation, char gender, double salary, String address, long contact) {
         this.id = id;
         this.name = name;
         this.designation = designation;
         this.gender = gender;
         this.salary = salary;
         this.address = address;
+        this.contact = contact;
     }
 
-    
+
 }
