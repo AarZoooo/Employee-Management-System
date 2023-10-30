@@ -3,9 +3,12 @@
  * This class also provides methods to write data into storage and read data from storage.
  */
 
+ import java.util.Scanner;
+
 public class Employee {
 
     //Data variables
+
     int id;
     String name;
     String designation;
@@ -16,6 +19,7 @@ public class Employee {
 
 
     //Constructors
+
     public Employee() {
         
     }
@@ -33,6 +37,37 @@ public class Employee {
 
     //Methods
     
+    public static void printAllData() {
+        
+    }
 
-    
+    public static void addData() {
+
+    }
+
+    public static void searchData() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter Employee ID: ");
+        int id = sc.nextInt();
+
+        Data.searchData(id);
+
+        sc.close();
+    }
+
+    public static void updateData() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter Employee ID: ");
+        int id = sc.nextInt();
+
+        Data.searchData(id);
+
+        sc.close();
+    }
+
+    public static void deleteData() {
+
+    }
 }

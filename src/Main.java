@@ -1,4 +1,3 @@
-import java.io.File;
 import java.util.Scanner;
 
 public class Main {
@@ -26,34 +25,33 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                System.out.println("\nShowing all Employee Data---");
+                    System.out.println("\nShowing all Employee Data---");
                     Employee.printAllData();
                     break;
             
                 case 2:
-                    System.out.println("Searching Employee Data---");
-
-                    System.out.print("Enter Employee ID: ");
-                    int employeeID = scan.nextInt();
-
-                    Employee.searchData(employeeID);
-                    
+                    System.out.println("Adding Employee Data---");
+                    Employee.addData();
                     break;
 
                 case 3:
-                    
+                    System.out.println("Searching Employee Data---");
+                    Employee.searchData();
                     break;
             
                 case 4:
-                    
+                    System.out.println("Updating Employee Data---");
+                    Employee.updateData();
                     break;
             
                 case 5:
-                    
+                    System.out.println("Deleting Employee Data---");
+                    Employee.deleteData();
                     break;
             
                 case 6:
-                    
+                    System.out.println("Exiting...");
+                    scan.close();
                     return;
             
                 default:

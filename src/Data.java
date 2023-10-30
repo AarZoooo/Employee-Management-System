@@ -11,6 +11,7 @@ public class Data {
 
     //Methods
     //These methods are for directly printing data to GUI
+
     public static void printAllData() {
         try {
             File readerFile = new File("../data/employee.txt");
@@ -63,6 +64,7 @@ public class Data {
                     System.out.println("Employee CONTACT NUMBER: " + dataArray[6]);
 
                     System.out.println();
+                    reader.close();
                     return;
                 }
             }
@@ -77,6 +79,7 @@ public class Data {
     }
 
     //These methods are for manipulating data. They do not do any type of printing to the GUI
+    
     public static void addData(Employee empObject) {
         try {
             String newDataLine = "\n" + empObject.id + "," + empObject.name + "," + empObject.designation + "," + empObject.gender + "," + empObject.salary + "," + empObject.address + "," + empObject.contact;
