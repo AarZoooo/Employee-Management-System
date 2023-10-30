@@ -3,11 +3,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        //Scanner object
         Scanner scan = new Scanner(System.in);
 
-
-        //GUI Code
         System.out.println("----------  EMPLOYEE MANAGEMENT SYSTEM  ----------");
         
         int choice;
@@ -21,9 +18,10 @@ public class Main {
             System.out.println("6. Exit\n");
 
             System.out.print("Enter your choice: ");
-            
+
             try {
                 choice = scan.nextInt();
+
             } catch (Exception e) {
                 choice = 0;
             }

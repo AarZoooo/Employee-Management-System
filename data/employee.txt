@@ -1,2 +1,3 @@
-
 101,Aarju Pal,Manager,M,105000.0,West Bengal,7908636536
+
+1,1,1,1,1.0,1,1

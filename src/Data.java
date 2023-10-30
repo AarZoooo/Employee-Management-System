@@ -85,7 +85,7 @@ public class Data {
     
     public static void addData(Employee empObject) {
         try {
-            String newDataLine = "\n" + empObject.id + "," + empObject.name + "," + empObject.designation + "," + empObject.gender + "," + empObject.salary + "," + empObject.address + "," + empObject.contact;
+            String newDataLine = empObject.id + "," + empObject.name + "," + empObject.designation + "," + empObject.gender + "," + empObject.salary + "," + empObject.address + "," + empObject.contact;
 
             File storagFile = new File("../data/employee.txt");
             FileOutputStream fos = new FileOutputStream(storagFile, true);
@@ -93,6 +93,7 @@ public class Data {
             byte[] bytesToWrite = newDataLine.getBytes();
 
             fos.write(bytesToWrite);
+            fos.write(System.lineSeparator().getBytes());
 
             fos.close();
 

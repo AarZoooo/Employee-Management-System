@@ -82,7 +82,7 @@ public class Employee {
     public static void searchData() {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Enter Employee ID: ");
+        System.out.print("Enter Employee ID: ");
         int id = sc.nextInt();
 
         Data.searchData(id);
