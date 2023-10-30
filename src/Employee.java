@@ -38,11 +38,45 @@ public class Employee {
     //Methods
     
     public static void printAllData() {
-        
+        Data.printAllData();
     }
 
     public static void addData() {
+        Scanner sc = new Scanner(System.in);
 
+        Employee newEmployee = new Employee();
+
+        System.out.println("Enter New Employee details---");
+
+        System.out.print("ID: ");
+        newEmployee.id = sc.nextInt();
+        sc.nextLine();
+
+        System.out.print("NAME: ");
+        newEmployee.name = sc.nextLine();
+
+        System.out.print("DESIGNATION: ");
+        newEmployee.designation = sc.nextLine();
+
+        System.out.print("GENDER: ");
+        newEmployee.gender = sc.next().charAt(0);
+
+        System.out.print("SALARY: ");
+        newEmployee.salary = sc.nextDouble();
+        sc.nextLine();
+
+        System.out.print("ADDRESS: ");
+        newEmployee.address = sc.nextLine();
+
+        System.out.print("CONTACT: ");
+        newEmployee.contact = sc.nextLong();
+        sc.nextLine();
+        
+        Data.addData(newEmployee);
+
+        System.out.println("\nEmployee data added.\n");
+
+        sc.close();
     }
 
     public static void searchData() {
@@ -62,12 +96,52 @@ public class Employee {
         System.out.println("Enter Employee ID: ");
         int id = sc.nextInt();
 
-        Data.searchData(id);
+        if (Data.searchData(id)) {
+            Employee newEmployee = new Employee();
+
+            System.out.println("Enter New Employee details---");
+
+            newEmployee.id = id;
+
+            System.out.print("NAME: ");
+            newEmployee.name = sc.nextLine();
+
+            System.out.print("DESIGNATION: ");
+            newEmployee.designation = sc.nextLine();
+
+            System.out.print("GENDER: ");
+            newEmployee.gender = sc.next().charAt(0);
+
+            System.out.print("SALARY: ");
+            newEmployee.salary = sc.nextDouble();
+
+            System.out.print("ADDRESS: ");
+            newEmployee.address = sc.nextLine();
+
+            System.out.print("CONTACT: ");
+            newEmployee.contact = sc.nextLong();
+            
+            Data.updateData(id, newEmployee);
+
+            System.out.println("\nEmployee data updated.\n");
+        }
 
         sc.close();
     }
 
     public static void deleteData() {
+        Scanner sc = new Scanner(System.in);
 
+        System.out.println("Enter Employee ID: ");
+        int id = sc.nextInt();
+
+        if (Data.searchData(id)) {
+
+            Data.deleteData(id);
+
+            System.out.println("\nEmployee data deleted.\n");
+        }
+
+        sc.close();
     }
 }

@@ -5,6 +5,7 @@
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Data {
@@ -43,7 +44,7 @@ public class Data {
         }
     }
 
-    public static void searchData(int employeeID) {
+    public static boolean searchData(int employeeID) {
         try {
             File readerFile = new File("../data/employee.txt");
             Scanner reader = new Scanner(readerFile);
@@ -65,7 +66,7 @@ public class Data {
 
                     System.out.println();
                     reader.close();
-                    return;
+                    return true;
                 }
             }
 
@@ -76,9 +77,11 @@ public class Data {
         } catch (Exception e) {
             System.out.println(e);
         }
+
+        return false;
     }
 
-    //These methods are for manipulating data. They do not do any type of printing to the GUI
+    //These are for manipulating data. They do not do any type of printing to the GUI
     
     public static void addData(Employee empObject) {
         try {
@@ -99,6 +102,86 @@ public class Data {
     }
 
     public static void updateData(int id, Employee empObject) {
-        
+        try {
+            File dataFile = new File("../data/employee.txt");
+            Scanner sc = new Scanner(dataFile);
+
+            ArrayList<String> readData = new ArrayList<>();
+
+            while (sc.hasNextLine()) {
+                readData.add(sc.nextLine());
+            }
+
+            sc.close();
+
+            for (String line : readData) {
+                String[] lineArray = line.split(",");
+
+                if (Integer.parseInt(lineArray[0]) == id) {
+                    lineArray[1] = "" + empObject.name;
+                    lineArray[2] = "" + empObject.designation;
+                    lineArray[3] = "" + empObject.gender;
+                    lineArray[4] = "" + empObject.salary;
+                    lineArray[5] = "" + empObject.address;
+                    lineArray[6] = "" + empObject.contact;
+
+                    break;
+                }
+            }
+
+            FileOutputStream fos = new FileOutputStream(dataFile);
+
+            for (String line : readData) {
+                byte[] dataBytes = line.getBytes();
+
+                fos.write(dataBytes);
+                fos.write(System.lineSeparator().getBytes());
+            }
+
+            fos.close();
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public static void deleteData(int id) {
+        try {
+            File dataFile = new File("../data/employee.txt");
+            Scanner sc = new Scanner(dataFile);
+
+            ArrayList<String> readData = new ArrayList<>();
+
+            while (sc.hasNextLine()) {
+                readData.add(sc.nextLine());
+            }
+
+            sc.close();
+
+            for (int i = 0; i < readData.size(); i++) {
+                String[] lineArray = readData.get(i).split(",");
+
+                if (Integer.parseInt(lineArray[0]) == id) {
+                    
+                    readData.remove(i);
+
+                    break;
+                }
+            }
+
+            FileOutputStream fos = new FileOutputStream(dataFile);
+
+            for (String line : readData) {
+                byte[] dataBytes = line.getBytes();
+
+                fos.write(dataBytes);
+                fos.write(System.lineSeparator().getBytes());
+            }
+
+            fos.close();
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 }

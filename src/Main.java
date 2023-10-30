@@ -21,7 +21,12 @@ public class Main {
             System.out.println("6. Exit\n");
 
             System.out.print("Enter your choice: ");
-            choice = scan.nextInt();
+            
+            try {
+                choice = scan.nextInt();
+            } catch (Exception e) {
+                choice = 0;
+            }
 
             switch (choice) {
                 case 1:
