@@ -93,5 +93,9 @@ public class Employee {
         }
     }
 
+    public static void addData(Employee empObject) {
+
+    }
+
     
 }
