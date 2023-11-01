@@ -7,7 +7,7 @@ public class Main {
 
         System.out.println("----------  EMPLOYEE MANAGEMENT SYSTEM  ----------");
         
-        int choice;
+        int choice = 0;
 
         while (true) {
             System.out.println("1. View all Employee Data");
@@ -19,11 +19,13 @@ public class Main {
 
             System.out.print("Enter your choice: ");
 
-            try {
-                choice = scan.nextInt();
-
-            } catch (Exception e) {
-                choice = 0;
+            while (true) {
+                if (scan.hasNextLine()) {
+                    choice = scan.nextInt();
+                    break;
+                } else {
+                    scan.nextLine();
+                }
             }
 
             switch (choice) {
@@ -33,28 +35,27 @@ public class Main {
                     break;
             
                 case 2:
-                    System.out.println("Adding Employee Data---");
+                    System.out.println("\nAdding Employee Data---");
                     Employee.addData();
                     break;
 
                 case 3:
-                    System.out.println("Searching Employee Data---");
+                    System.out.println("\nSearching Employee Data---");
                     Employee.searchData();
                     break;
             
                 case 4:
-                    System.out.println("Updating Employee Data---");
+                    System.out.println("\nUpdating Employee Data---");
                     Employee.updateData();
                     break;
             
                 case 5:
-                    System.out.println("Deleting Employee Data---");
+                    System.out.println("\nDeleting Employee Data---");
                     Employee.deleteData();
                     break;
             
                 case 6:
-                    System.out.println("Exiting...");
-                    scan.close();
+                    System.out.println("\nExiting...");
                     return;
             
                 default:

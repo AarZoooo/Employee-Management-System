@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class Data {
 
-    //Methods
+    //Static Methods
     //These methods are for directly printing data to GUI
 
     public static void printAllData() {
@@ -37,7 +37,6 @@ public class Data {
             }
 
             System.out.println("-----------------------------\n");
-            reader.close();
 
         } catch (Exception e) {
             System.out.println(e);
@@ -54,7 +53,7 @@ public class Data {
                 String lineOfData = reader.nextLine();
                 String[] dataArray = lineOfData.split(",");
 
-                if (dataArray[0] == Integer.toString(employeeID)) {
+                if (Integer.parseInt(dataArray[0]) == employeeID) {
                     System.out.println("Employee found -----");
                     System.out.println("Employee ID: " + dataArray[0]);
                     System.out.println("Employee NAME: " + dataArray[1]);
@@ -71,8 +70,6 @@ public class Data {
             }
 
             System.out.println("Employee not found\n");
-
-            reader.close();
 
         } catch (Exception e) {
             System.out.println(e);
@@ -112,8 +109,6 @@ public class Data {
             while (sc.hasNextLine()) {
                 readData.add(sc.nextLine());
             }
-
-            sc.close();
 
             for (String line : readData) {
                 String[] lineArray = line.split(",");
@@ -156,8 +151,6 @@ public class Data {
             while (sc.hasNextLine()) {
                 readData.add(sc.nextLine());
             }
-
-            sc.close();
 
             for (int i = 0; i < readData.size(); i++) {
                 String[] lineArray = readData.get(i).split(",");
