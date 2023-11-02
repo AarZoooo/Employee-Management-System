@@ -21,7 +21,7 @@ public class Main {
             choice = scan.next();
 
             try {
-                Integer.parseInt(choice)
+                Integer.parseInt(choice);
             } catch (Exception e) {
                 System.out.println("Invalid Input. Try again.\n");
                 continue;
