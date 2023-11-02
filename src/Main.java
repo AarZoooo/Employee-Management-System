@@ -20,6 +20,13 @@ public class Main {
             System.out.print("Enter your choice: ");
             choice = scan.next();
 
+            try {
+                Integer.parseInt(choice)
+            } catch (Exception e) {
+                System.out.println("Invalid Input. Try again.\n");
+                continue;
+            }
+
             switch (Integer.parseInt(choice)) {
                 case 1:
                     System.out.println("\nShowing all Employee Data---");
