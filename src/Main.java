@@ -19,13 +19,17 @@ public class Main {
 
             System.out.print("Enter your choice: ");
 
-            while (true) {
-                if (scan.hasNextLine()) {
-                    choice = scan.nextInt();
-                    break;
-                } else {
-                    scan.nextLine();
+            try {
+                while (true) {
+                    if (scan.hasNextLine()) {
+                        choice = scan.nextInt();
+                        break;
+                    } else {
+                        scan.nextLine();
+                    }
                 }
+            } catch (Exception e) {
+                System.out.println("Invalid Input. Try again---\n");
             }
 
             switch (choice) {

@@ -1,4 +1,3 @@
 101,Aarju Pal,Manager,M,105000.0,West bengal,7908636536
 102,Sajda Sabnam,HR,F,95000.0,West bengal,1234567890
 103,Sameer Gautam,HR,M,96000.0,I dont know,9876543210
-104,Sattwik Samui,Developer,<,45000.0,West Bengal,1234567890,
