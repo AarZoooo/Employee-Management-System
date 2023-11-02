@@ -73,6 +73,7 @@ public class Employee {
 
         System.out.println("Enter Employee ID: ");
         int id = sc.nextInt();
+        sc.nextLine();
 
         if (Data.searchData(id)) {
             Employee newEmployee = new Employee();
@@ -92,6 +93,7 @@ public class Employee {
 
             System.out.print("SALARY: ");
             newEmployee.salary = sc.nextDouble();
+            sc.nextLine();
 
             System.out.print("ADDRESS: ");
             newEmployee.address = sc.nextLine();
