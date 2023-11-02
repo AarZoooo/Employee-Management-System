@@ -71,7 +71,7 @@ public class Employee {
     public static void updateData() {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Enter Employee ID: ");
+        System.out.print("Enter Employee ID: ");
         int id = sc.nextInt();
         sc.nextLine();
 
