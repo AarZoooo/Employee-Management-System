@@ -110,7 +110,7 @@ public class Employee {
     public static void deleteData() {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Enter Employee ID: ");
+        System.out.print("Enter Employee ID: ");
         int id = sc.nextInt();
 
         if (Data.searchData(id)) {
