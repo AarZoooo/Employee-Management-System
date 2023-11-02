@@ -7,7 +7,7 @@ public class Main {
 
         System.out.println("----------  EMPLOYEE MANAGEMENT SYSTEM  ----------");
         
-        int choice = 0;
+        String choice = "";
 
         while (true) {
             System.out.println("1. View all Employee Data");
@@ -17,14 +17,10 @@ public class Main {
             System.out.println("5. Delete Employee");
             System.out.println("6. Exit\n");
 
-            
-            try {
-                choice = scan.nextInt();
-            } catch (Exception e) {
-                System.out.println("Invalid Input. Try again.\n");
-            }
+            System.out.print("Enter your choice: ");
+            choice = scan.next();
 
-            switch (choice) {
+            switch (Integer.parseInt(choice)) {
                 case 1:
                     System.out.println("\nShowing all Employee Data---");
                     Employee.printAllData();
