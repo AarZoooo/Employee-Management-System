@@ -17,19 +17,13 @@ public class Main {
             System.out.println("5. Delete Employee");
             System.out.println("6. Exit\n");
 
-            System.out.print("Enter your choice: ");
-
-            // while (true) {
-            //     if (scan.hasNextLine()) {
-            //         choice = scan.nextInt();
-            //         break;
-            //     } else {
-            //         scan.nextLine();
-            //     }
-            // }
-
-            choice = scan.nextInt();
             
+            try {
+                choice = scan.nextInt();
+            } catch (Exception e) {
+                System.out.println("Invalid Input. Try again.\n");
+            }
+
             switch (choice) {
                 case 1:
                     System.out.println("\nShowing all Employee Data---");
