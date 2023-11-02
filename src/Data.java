@@ -123,7 +123,7 @@ public class Data {
 
                     readData.remove(line);
 
-                    String newLine = "";
+                    String newLine = id + ",";
 
                     for (int i = 1; i < 7; i++) {
                         newLine += (lineArray[i] + ",");
