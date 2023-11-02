@@ -110,8 +110,8 @@ public class Data {
                 readData.add(sc.nextLine());
             }
 
-            for (String line : readData) {
-                String[] lineArray = line.split(",");
+            for (int line = 0; line < readData.size(); line++) {
+                String[] lineArray = readData.get(line).split(",");
 
                 if (Integer.parseInt(lineArray[0]) == id) {
                     lineArray[1] = "" + empObject.name;
@@ -121,11 +121,15 @@ public class Data {
                     lineArray[5] = "" + empObject.address;
                     lineArray[6] = "" + empObject.contact;
 
-                    line = "";
+                    readData.remove(line);
+
+                    String newLine = "";
 
                     for (int i = 1; i < 7; i++) {
-                        line += (lineArray[i] + ",");
+                        newLine += (lineArray[i] + ",");
                     }
+
+                    readData.add(newLine);
 
                     break;
                 }
