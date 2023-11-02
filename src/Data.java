@@ -121,6 +121,12 @@ public class Data {
                     lineArray[5] = "" + empObject.address;
                     lineArray[6] = "" + empObject.contact;
 
+                    line = "";
+
+                    for (int i = 1; i < 7; i++) {
+                        line += (lineArray[i] + ",");
+                    }
+
                     break;
                 }
             }
