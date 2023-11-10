@@ -1,5 +1,5 @@
 ## Introduction
-This is a mini-project where an Employee Management System is made using java. In this project, we have used text files as storage. This program lets the user do a bunch of tasks with the employee data like Adding, Viewing, Deleting, Updating and Modifying.
+This is a mini-project where an Employee Management System is made using java. In this project, we have used text files as storage. This program lets the user do a bunch of tasks with the employee data like Adding, Searching, Deleting, Updating and Viewing all Employees.
 
 ## Working
 This has a menu-driven approach for the interface. It starts off with offering the user the menus he can do, and asking for an input. Based on user input the program performs the tasks.
@@ -24,10 +24,10 @@ When user selects the first option, the program then leads the user to add the d
  - Employee ADDRESS
  - Employee CONTACT NUMBER
 
-After the user adds the following information, the program then saves the data in the respective file and stores them.
+After the user adds the following information, the program then saves the data in the file and stores them.
 
 ## Searching Employee Data
-This task is performed by the program by taking the Employee ID as input. After taking the input, it goes through the files for the respective Employee data. If found, it is printed. If not, an error message is sent to the terminal, informing the user about the unavailablity of the Employee data.
+This task is performed by the program by taking the Employee ID as input. After taking the input, it goes through the file for the respective Employee data. If found, it is printed. If not, an error message is sent to the terminal, informing the user about the unavailablity of the Employee data.
 
 ## Updating Employee Data
 This task is performed by the program taking the Employee ID as input to search for the record to be updated. Then the program lets the user enter every detail again. When it's done, the program saves the updated information and stores it again.
